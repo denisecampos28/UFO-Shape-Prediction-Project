@@ -12,12 +12,30 @@ My approach framed this as a multi-class classification task, where the model mu
 The best performing model was a rebalanced XGBoost classifier, trained on a simplified 3-class label set. It achieved:
 
 - Accuracy: 42%
-- F1 Score: 0.38
+- F1 Score: 0.38%
   
 While another model scored a higher accuray, this model achieved the highest F1 score, which I believe is more important since there was a class imbalance. 
 
 ### Data
+- Type: Tabular CSV dataset
+- Inputs:
+    - Original Features: sighting date, time, city, state, latitude, longitude, shape, comments, duration (hrs/min), duration (seconds), date posted
+    - Weather Features: temperature, pressure, cloud cover (weather information retrieved from historical weather API)
+    - Engineered Features:
+        - day_type: whether the sighting occured on a weekday or weekend
+        - area_type: whether the sighting occured in an urban or rural area, this was based on proximity to major cities
+        - all categoical features were custom binned
 
+  -Target: UFO shape
+    - Original: 70+ unique values found in shape column
+    - Simplified: 6 class categorical label
+    - Further Simplified: 3 class categorical label, for improved classification performance
+
+  - Size:~50,000 records
+
+  - Train-Test Split: 80% training, 20% test
+
+  
 #### Preprocessing/Cleanup 
 
 ### Problem Formulation 
