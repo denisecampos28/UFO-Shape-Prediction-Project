@@ -1,36 +1,36 @@
 ![image](https://github.com/user-attachments/assets/da6a42d2-05f4-4f45-9044-4d29de957c1c)
-#UFO-Shape-Prediction-Project
+# UFO-Shape-Prediction-Project
 
-##Overview
+## Overview
 
 
-##Summary of Workdone 
+## Summary of Workdone 
 
-###Data
+### Data
 
-####Preprocessing/Cleanup 
+#### Preprocessing/Cleanup 
 
-###Problem Formulation 
+### Problem Formulation 
 
-###Training 
+### Training 
 
-###Performance Comparison 
+### Performance Comparison 
 
-###Conclusions
+### Conclusions
 
-###Future Work 
+### Future Work 
 
-##How to reproduce results 
+## How to reproduce results 
 
-###Overview of files in repository 
+### Overview of files in repository 
 
-###Software Setup 
+### Software Setup 
 
-###Data 
+### Data 
 
-###Training 
+### Training 
 
-####Performance Evaluation 
+#### Performance Evaluation 
 
-##Citations
+## Citations
 
