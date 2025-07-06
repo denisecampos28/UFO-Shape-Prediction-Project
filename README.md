@@ -26,7 +26,7 @@ While another model scored a higher accuray, this model achieved the highest F1 
         - area_type: whether the sighting occured in an urban or rural area, this was based on proximity to major cities
         - all categoical features were custom binned
 
-  -Target: UFO shape
+  - Target: UFO shape
     - Original: 70+ unique values found in shape column
     - Simplified: 6 class categorical label
     - Further Simplified: 3 class categorical label, for improved classification performance
@@ -45,7 +45,20 @@ To prepare the data for modeling, several cleaning and transformation steps were
   - target transformation 
 
 ### Problem Formulation 
-This data had a prominenet class imbalance. There were several 
+This data had a prominenet class imbalance. The image below shows all the unique values found in the original UFO sightings dataset.
+![Screen Shot 2025-07-06 at 7 35 21 AM](https://github.com/user-attachments/assets/0853253b-2449-4354-aee6-3fd73264747b)
+
+This data also contained sightings from around the world. As you can see, they were mainly in the Continenetal United States.
+
+![Screen Shot 2025-07-06 at 7 36 52 AM](https://github.com/user-attachments/assets/31058a09-d4c6-4bd5-a3b0-e1988532e31d)
+
+After my first model performed poorly,I decided to remove all sightings that were outside of the US because I felt like that introduced noise. 
+
+![Screen Shot 2025-07-06 at 7 38 10 AM](https://github.com/user-attachments/assets/d8462d22-cd10-499d-b580-bdab1da1e820)
+
+The image below shows a trend that UFO sightings happened disproportionately more in the 2010's. This leads me to think that sightings are a complex cultural phenomenon. 
+
+![Screen Shot 2025-07-06 at 7 37 30 AM](https://github.com/user-attachments/assets/208274c0-ee26-4150-b6c2-caac0d19bb36)
 
 ### Training 
 
