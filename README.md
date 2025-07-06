@@ -37,8 +37,15 @@ While another model scored a higher accuray, this model achieved the highest F1 
 
   
 #### Preprocessing/Cleanup 
+To prepare the data for modeling, several cleaning and transformation steps were performed: 
+  - dropped rows with missing or invalid values
+  - merged the original UFO dataset with the weather dataset, which was obtained from scraping historical weather data from an API
+  - dropped unnecessary columns to reduce noise
+  - feature engineering (day_type, area_type, binning)
+  - target transformation 
 
 ### Problem Formulation 
+This data had a prominenet class imbalance. There were several 
 
 ### Training 
 
