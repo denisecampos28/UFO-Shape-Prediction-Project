@@ -63,21 +63,55 @@ The image below shows a trend that UFO sightings happened disproportionately mor
 ### Training 
 
 ### Performance Comparison 
+The primary evaluation metric for this multi-class classification task is the F1-score, along with accuracy, precision, and recall. Given the class imbalance in the dataset, the macro-averaged F1-score is the most reliable indicator of performance.
+
+![Unknown](https://github.com/user-attachments/assets/21232bae-f8e1-4589-af37-ff694cbc7358)
+
+![Screen Shot 2025-07-06 at 5 18 28 PM](https://github.com/user-attachments/assets/3ba6e8c1-9388-45bf-b596-4ef1c1735dfb)
 
 ### Conclusions
+Grouped shape categories significantly improved model performance.
+When I grouped the original 6 shape labels into 3 broader categories (light, structured, and weird), classification performance improved across all models, especially in precision and recall. Using compute_sample_weight to address class imbalance led to higher F1-scores for the structured and weird categories, which were previously underperforming due to fewer examples. Among all models tested, the XGBoost classifier on grouped and rebalanced data achieved the best macro F1-score (0.38), making it the most effective model for this classification task. Binning weather features, encoding location zones, and distinguishing between urban/rural areas all contributed to more meaningful inputs for the models.
+
+While the results may not be groundbreaking, I’m genuinely proud of the progress made throughout this project. I was able to explore the dataset in depth, apply thoughtful preprocessing techniques, and improve performance through feature engineering and label grouping. That said, I’ve come to believe this problem may not be one that model tuning alone can solve. The nature of UFO sightings is inherently subjective, noisy, and complex, making it difficult to extract clear, predictive patterns. Still, this project was a valuable exercise in understanding how data characteristics can limit model performance, and I’m glad I had the opportunity to work through it.
+
 
 ### Future Work 
+I have several ideas for continued work. One next step would be to collect more reliable structured data, such as census information, air traffic records, or environmental data, which could provide stronger context for each sighting. Another idea is to reevaluate how I chose bin my cateogorical labels and classes. 
+
 
 ## How to reproduce results 
+- Download and place the original datasets into the appropriate data/ folder. This includes: scrubbed.csv, weather_final_full.csv
+- Open and run the notebook initial_cleaning.ipynb to clean and prepare the dataset.
+- Next, open and run the bettering_accuracy.ipynb notebook. This will encode features, train multiple models, apply label grouping, and report evaluation metrics.
+
 
 ### Overview of files in repository 
 
 ### Software Setup 
+| Package           | Version (or Latest) |
+|-------------------|---------------------|
+| `pandas`          | >= 1.5              |
+| `numpy`           | >= 1.22             |
+| `matplotlib`      | >= 3.5              |
+| `seaborn`         | >= 0.11             |
+| `scikit-learn`    | >= 1.1              |
+| `xgboost`         | >= 1.7              |
+| `geopy`           | >= 2.3              |
+| `plotly`          | >= 5.14             |
+| `jupyter`         | (for running notebooks) |
 
-### Data 
+---
+
+
+### Data Download
+To download the scrubbed.csv, you can simply download the zip file from Kaggle. 
+https://www.kaggle.com/datasets/NUFORC/ufo-sightings
+
 
 #### Training and Performance Evaluation 
 Training and evaluation is carried out in the better_accuracy.ipynb file. Just run the code. 
+
 
 ## Citations
 Shah, Bilal Ali. “UFO Dataset: Predicting UFO Sightings in the US.” Medium, October 25, 2023. https://medium.com/@24020041/ufo-dataset-predicting-ufo-sightings-in-the-us-7539c95e75a8.
