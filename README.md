@@ -42,7 +42,9 @@ To prepare the data for modeling, several cleaning and transformation steps were
   - merged the original UFO dataset with the weather dataset, which was obtained from scraping historical weather data from an API
   - dropped unnecessary columns to reduce noise
   - feature engineering (day_type, area_type, binning)
-  - target transformation 
+  - target transformation
+
+
 
 ### Problem Formulation 
 This data had a prominenet class imbalance. The image below shows all the unique values found in the original UFO sightings dataset.
@@ -60,7 +62,17 @@ The image below shows a trend that UFO sightings happened disproportionately mor
 
 ![Screen Shot 2025-07-06 at 7 37 30 AM](https://github.com/user-attachments/assets/208274c0-ee26-4150-b6c2-caac0d19bb36)
 
+
+
 ### Training 
+- Software: python 3.10+, Jupyter Notebook, Scikit-learn, XGBoost, Pandas, Numpy, Matplotlib
+- Hardware: trained on a personal windows PC
+- Training Duration: Each model trained within seconds to a couple of minutes. However, scraping the weather data took about 40 hours.
+- Challenges Faced:
+    - Make sure the computer that you are webscraping on has enough storage. Else, you could leave a cell running for hours, and the data will not save due to no storage.
+    - Most sightings were labelled as "light", while others like "structured" and "weird" were underrepresented. The solution I applied was to apply compute_sample_weight().
+    - There were some irrelevant features. I removed them early on, because I knew this would just add noise to my model.
+
 
 ### Performance Comparison 
 The primary evaluation metric for this multi-class classification task is the F1-score, along with accuracy, precision, and recall. Given the class imbalance in the dataset, the macro-averaged F1-score is the most reliable indicator of performance.
@@ -68,6 +80,8 @@ The primary evaluation metric for this multi-class classification task is the F1
 ![Unknown](https://github.com/user-attachments/assets/21232bae-f8e1-4589-af37-ff694cbc7358)
 
 ![Screen Shot 2025-07-06 at 5 18 28 PM](https://github.com/user-attachments/assets/3ba6e8c1-9388-45bf-b596-4ef1c1735dfb)
+
+
 
 ### Conclusions
 Grouped shape categories significantly improved model performance.
@@ -87,6 +101,21 @@ I have several ideas for continued work. One next step would be to collect more 
 
 
 ### Overview of files in repository 
+- bettering_accuracy(4).ipynb: this file contains my models and evaluations
+- cleaned_ufo_data(2).csv: this file contains a cleaned version of the scrubbed.csv
+- initial_cleaning(7).ipynb: this file contains my code for loading the dataset, cleaning it, visualizing it, and preprocessing it
+- merged(1).csv: this file is my cleaned_ufo_data(2).csv combined with the weather_final_full(2).csv, so it is my cleaned original daset with the matching historic weather data
+- merged_all_cols.csv: this file contains the merged(1).csv along with the custom categorical bins I created, and the custom features i created 
+- merged_bins_and_og(1).csv: this file contains the merged(1).csv along with the custom categorical bins I created
+- merged_bins_only: this file contains only the custom categorical bins for the features 
+- merged_for_model: this file contains the merged_all_cols.csv but without the 'region' feature 
+- merged_for_model_2: this file contains the merged_all_cols.csv but with the 'region' feature
+- scrubbed.csv: this file is the original UFO dataset from kaggle
+- weather_final_full(2).csv: this final contains all (50,000) the scrapped historic weather records gathered from an API 
+- weather_retry(2).csv: this final contains the scrapped weather records that were not gathered the first time, but were gathered on the second try 
+- weather_retry_autosave(2).csv: this file was for precautions only, it autosaved every 100 records of my scrapping journey
+- xgb_final_model.pkl: this file contains the best performing model 
+
 
 ### Software Setup 
 | Package           | Version (or Latest) |
@@ -109,7 +138,7 @@ To download the scrubbed.csv, you can simply download the zip file from Kaggle.
 https://www.kaggle.com/datasets/NUFORC/ufo-sightings
 
 
-#### Training and Performance Evaluation 
+### Training and Performance Evaluation 
 Training and evaluation is carried out in the better_accuracy.ipynb file. Just run the code. 
 
 
