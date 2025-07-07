@@ -76,9 +76,10 @@ The image below shows a trend that UFO sightings happened disproportionately mor
 
 ### Data 
 
-### Training 
-
-#### Performance Evaluation 
+#### Training and Performance Evaluation 
+Training and evaluation is carried out in the better_accuracy.ipynb file. Just run the code. 
 
 ## Citations
+Shah, Bilal Ali. “UFO Dataset: Predicting UFO Sightings in the US.” Medium, October 25, 2023. https://medium.com/@24020041/ufo-dataset-predicting-ufo-sightings-in-the-us-7539c95e75a8.
+
 
