@@ -47,7 +47,8 @@ To prepare the data for modeling, several cleaning and transformation steps were
 
 
 ### Problem Formulation 
-This data had a prominenet class imbalance. The image below shows all the unique values found in the original UFO sightings dataset.
+This data had a prominent class imbalance. The image below shows all the unique values found in the original UFO sightings dataset.
+
 ![Screen Shot 2025-07-06 at 7 35 21 AM](https://github.com/user-attachments/assets/0853253b-2449-4354-aee6-3fd73264747b)
 
 This data also contained sightings from around the world. As you can see, they were mainly in the Continenetal United States.
@@ -68,6 +69,7 @@ The image below shows a trend that UFO sightings happened disproportionately mor
 - Software: python 3.10+, Jupyter Notebook, Scikit-learn, XGBoost, Pandas, Numpy, Matplotlib
 - Hardware: trained on a personal windows PC
 - Training Duration: Each model trained within seconds to a couple of minutes. However, scraping the weather data took about 40 hours.
+  
 - Challenges Faced:
     - Make sure the computer that you are webscraping on has enough storage. Else, you could leave a cell running for hours, and the data will not save due to no storage.
     - Most sightings were labelled as "light", while others like "structured" and "weird" were underrepresented. The solution I applied was to apply compute_sample_weight().
